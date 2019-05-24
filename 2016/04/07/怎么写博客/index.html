@@ -17,8 +17,8 @@
 <meta property="og:description" content="欢迎来到莫与的博客，第一篇记录了一下怎么写一篇博客，以方便之后写博客~">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/18009847-115604d6abcce93d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://yoursite.com/2016/04/07/怎么写博客/怎么写博客/1.jpg">
-<meta property="og:updated_time" content="2019-05-24T08:00:27.000Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/18009847-2c250391660f10b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-05-24T08:10:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第一篇写一下写博客简单的流程">
 <meta name="twitter:description" content="欢迎来到莫与的博客，第一篇记录了一下怎么写一篇博客，以方便之后写博客~">
@@ -68,6 +68,9 @@
 				<li><a href="/photo">相册</a></li>
 	        
 			</ul>
+		</nav>
+		<nav>
+    		总文章数 8
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -180,12 +183,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <audio id="audio" autoplay="autoplay" loop="loop"><br>    <source src="http://qzone.haoduoge.com/music1/2015-04-23/1429774382.mp3" type="audio/mp3"><br><br></audio>
-
-<p>欢迎来到莫与的博客，第一篇记录了一下怎么写一篇博客，以方便之后写博客~<br><img src="https://upload-images.jianshu.io/upload_images/18009847-115604d6abcce93d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="shulan"><br><a id="more"></a></p>
+        <p>欢迎来到莫与的博客，第一篇记录了一下怎么写一篇博客，以方便之后写博客~<br><img src="https://upload-images.jianshu.io/upload_images/18009847-115604d6abcce93d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="shulan"><br><a id="more"></a></p>
 <p>#从配置说起<br>下载安装Git与Node.js略过</p>
 <p>1.安装hexo<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g #-g表示全局安装, npm默认为当前项目安装</span><br></pre></td></tr></table></figure></p>
-<p>2.Hexo使用命令:<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;  #执行init命令初始化hexo到你指定的目录</span><br><span class="line">hexo generate       #自动根据当前目录下文件,生成静态网页</span><br><span class="line">hexo server         #运行本地服务</span><br></pre></td></tr></table></figure></p>
+<p>2.Hexo使用命令:<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;  #执行init命令初始化hexo到你指定的目录</span><br><span class="line">hexo generate       #自动根据当前目录下文件,生成静态网页 hexo g</span><br><span class="line">hexo server         #运行本地服务 hexo s</span><br><span class="line">hexo clean          #清理</span><br></pre></td></tr></table></figure></p>
 <h1 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br></pre></td></tr></table></figure>
 <h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2. 配置"></a>2. 配置</h2><p>修改hexo根目录下的 _config.yml ： theme: yilia</p>
 <h2 id="3-更新"><a href="#3-更新" class="headerlink" title="3. 更新"></a>3. 更新</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes/yilia</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
@@ -198,7 +199,7 @@
 <h1 id="建立标签：ategories-动漫-文章分類目錄-可以省略"><a href="#建立标签：ategories-动漫-文章分類目錄-可以省略" class="headerlink" title="建立标签：ategories: 动漫 #文章分類目錄 可以省略"></a>建立标签：ategories: 动漫 #文章分類目錄 可以省略</h1><h2 id="代码如下：-2"><a href="#代码如下：-2" class="headerlink" title="代码如下："></a>代码如下：</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">tags: 自学记录 (写在头上）</span><br><span class="line"></span><br><span class="line">若多个标签，则：</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">- </span>first</span><br><span class="line"><span class="bullet">- </span>essay</span><br><span class="line"><span class="bullet">- </span>picture</span><br><span class="line">效果看题头</span><br></pre></td></tr></table></figure>
 <h1 id="写代码："><a href="#写代码：" class="headerlink" title="写代码："></a>写代码：</h1><h2 id="代码如下：-3"><a href="#代码如下：-3" class="headerlink" title="代码如下："></a>代码如下：</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">先写三个“`”带一个空格，后面写语言类型例如C++</span><br><span class="line">再写三个“`”</span><br></pre></td></tr></table></figure>
 <h2 id="注意！"><a href="#注意！" class="headerlink" title="注意！"></a>注意！</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">写markdown的时候，用txt打开，一定要用UTF-8保存。否则中文乱码。</span><br></pre></td></tr></table></figure>
-<h1 id="最后加一幅图："><a href="#最后加一幅图：" class="headerlink" title="最后加一幅图："></a>最后加一幅图：</h1><p><img src="怎么写博客/1.jpg" alt="1"></p>
+<h1 id="最后加一幅图："><a href="#最后加一幅图：" class="headerlink" title="最后加一幅图："></a>最后加一幅图：</h1><p><img src="https://upload-images.jianshu.io/upload_images/18009847-2c250391660f10b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1"></p>
 <h2 id="代码如下：-4"><a href="#代码如下：-4" class="headerlink" title="代码如下："></a>代码如下：</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">1</span>](<span class="link">https://upload-images.jianshu.io/upload_images/18009847-2c250391660f10b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</span>)</span><br></pre></td></tr></table></figure>
 <p>#怎么加音乐：（具体功能百度htmlaudio标签）<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;audio id="audio" autoplay="autoplay"&gt;</span><br><span class="line"><span class="code">    &lt;source src="http://qzone.haoduoge.com/music1/2015-04-23/1429774382.mp3" type="audio/mp3"&gt;&lt;/source&gt;</span></span><br><span class="line">&lt;/audio&gt;</span><br></pre></td></tr></table></figure></p>
 <p>#怎么改字体加颜色：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;font color="red" face="宋体"&gt;摘要：&lt;/font&gt;</span><br></pre></td></tr></table></figure></p>
@@ -276,7 +277,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2016/04/07/怎么写博客/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2016/04/07/怎么写博客/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -463,15 +464,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">自学教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">暖心</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">转载</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">自学教程</a>
               </li>
              
               <li class="article-tag-list-item">
