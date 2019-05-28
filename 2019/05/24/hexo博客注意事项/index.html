@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Moyu&#39;s blog">
 <meta property="og:description" content="简单列举一下今天遇到的问题以及解决方法。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-24T15:40:57.000Z">
+<meta property="og:updated_time" content="2019-05-28T14:26:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo博客注意事项">
 <meta name="twitter:description" content="简单列举一下今天遇到的问题以及解决方法。">
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://upload-images.jianshu.io/upload_images/18009847-72259db4a908f153.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="js-avatar">
+			<img src="https://mubu.com/document_image/e1b268f6-6254-46ac-b6b2-3e8ccc3fb2ad-3316715.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Moyu</a></h1>
@@ -111,7 +111,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://upload-images.jianshu.io/upload_images/18009847-72259db4a908f153.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="js-avatar">
+				<img src="https://mubu.com/document_image/e1b268f6-6254-46ac-b6b2-3e8ccc3fb2ad-3316715.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Moyu</h1>
@@ -193,9 +193,9 @@
 <h2 id="1-2-我这里分享的网址有问题。"><a href="#1-2-我这里分享的网址有问题。" class="headerlink" title="1.2 我这里分享的网址有问题。"></a>1.2 我这里分享的网址有问题。</h2><p>解决方法是在文件中的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sUrl = url.replace(<span class="regexp">/index\.html$/</span>, <span class="string">''</span>);</span><br><span class="line">  sUrl = <span class="regexp">/^(http:|https:)\/\//</span>.test(sUrl) ? sUrl : <span class="string">'http:'</span> + sUrl;</span><br></pre></td></tr></table></figure></p>
 <p>下面加一行<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test=sUrl.substring(<span class="number">20</span>);</span><br></pre></td></tr></table></figure></p>
 <p>然后上面就变成了：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">  <span class="keyword">var</span> sUrl = url.replace(<span class="regexp">/index\.html$/</span>, <span class="string">''</span>);</span><br><span class="line">  sUrl = <span class="regexp">/^(http:|https:)\/\//</span>.test(sUrl) ? sUrl : <span class="string">'http:'</span> + sUrl;</span><br><span class="line">  test=sUrl.substring(<span class="number">20</span>);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure></p>
-<p>然后将上一步中的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=</span></span><br></pre></td></tr></table></figure></p>
-<p>改为<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=你的主页网址</span></span><br></pre></td></tr></table></figure></p>
-<p>举例，我的网址是（dongshuyan.github.io）那么就改为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=http://dongshuyan.github.io/</span></span><br></pre></td></tr></table></figure></p>
+<p>然后将上一步中的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'//api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data='</span> + sUrl</span><br></pre></td></tr></table></figure></p>
+<p>改为<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'//api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=你的主页网址'</span> + test</span><br></pre></td></tr></table></figure></p>
+<p>举例，我的网址是（dongshuyan.github.io）那么就改为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"page-modal wx-share js-wx-box"</span>&gt;</span><br><span class="line">    &lt;a <span class="class"><span class="keyword">class</span></span>=<span class="string">"close js-modal-close"</span> href=<span class="string">"javascript:;"</span>&gt;&lt;i class="icon icon-close"&gt;&lt;/i&gt;&lt;/a&gt;</span><br><span class="line">    &lt;p&gt;扫一扫，分享到微信&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div class="wx-qrcode"&gt;</span></span><br><span class="line"><span class="regexp">      &lt;img src="&lt;%- 'qrcode' in locals ? qrcode(sUrl) : '/</span><span class="regexp">/api.qrserver.com/</span>v1/create-qr-code/?size=<span class="number">150</span>x150&amp;data=http:<span class="comment">//dongshuyan.github.io/' + test  %&gt;" alt="微信分享二维码"&gt;</span></span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br></pre></td></tr></table></figure></p>
 <p>#点击“所有文章”无显示</p>
 <p>themes\yilia\ _config.yml文件里面<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mathjax:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
 <p>改成<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mathjax:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
@@ -218,13 +218,13 @@
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="https://upload-images.jianshu.io/upload_images/18009847-1c7eaad7a372ab37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+                      <img class="reward-img" src="https://mubu.com/document_image/b18c5c90-1130-4071-a8f3-f9b96f7eb386-3316715.jpg">
                       <span class="reward-type">支付宝</span>
                     </div>
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="https://upload-images.jianshu.io/upload_images/18009847-b77d67905a179aef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+                      <img class="reward-img" src="https://mubu.com/document_image/812e63d7-01cf-418f-8000-1e6182180ad4-3316715.jpg">
                       <span class="reward-type">微信</span>
                     </div>
                     
@@ -526,15 +526,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学术写作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">暖心</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">转载</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学术写作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -601,7 +601,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">莫与&lt;br&gt;&lt;br&gt; 清华大学交叉信息研究院计算机博士在读 &lt;br&gt; &lt;img src=&#34;https://upload-images.jianshu.io/upload_images/18009847-4b8a20c63aeaf9a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&#34; width = 60% div align=center/&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">莫与&lt;br&gt;&lt;br&gt; 清华大学交叉信息研究院计算机博士在读 &lt;br&gt; &lt;img src=&#34;https://mubu.com/document_image/086abb6f-04c6-4486-8969-4305cb7b9820-3316715.jpg&#34; width = 60% div align=center/&gt;</div>
   	  	
     	</section>
     
