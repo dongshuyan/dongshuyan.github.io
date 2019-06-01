@@ -203,6 +203,39 @@ var _hmt = _hmt || [];
   <div class="article-inner">
     
       <header class="article-header">
+
+      <!-- 目录内容 -->
+      <!--
+        
+            <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+                  <span class="btn-bg"></span>
+                  <span class="btn-text">文章导航</span>
+                  </p>
+          <div id="toc-article" class="toc-article">
+              <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+            <strong class="toc-title">文章目录</strong>
+                   <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#5-6-5-22总结"><span class="toc-number">1.</span> <span class="toc-text">5.6-5.22总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#模板"><span class="toc-number">2.</span> <span class="toc-text">模板</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#日期"><span class="toc-number">3.</span> <span class="toc-text">日期</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-今天工作了什么？"><span class="toc-number">3.1.</span> <span class="toc-text">1.今天工作了什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-收获了什么？"><span class="toc-number">3.2.</span> <span class="toc-text">2.收获了什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-达到昨天目标了吗？"><span class="toc-number">3.3.</span> <span class="toc-text">3.达到昨天目标了吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-明天的目标是什么？"><span class="toc-number">3.4.</span> <span class="toc-text">4.明天的目标是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-近期的任务都有什么？"><span class="toc-number">3.5.</span> <span class="toc-text">5.近期的任务都有什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-对自己满意吗？"><span class="toc-number">3.6.</span> <span class="toc-text">6.对自己满意吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-建议"><span class="toc-number">3.7.</span> <span class="toc-text">7.建议</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2019-5-23总结"><span class="toc-number">4.</span> <span class="toc-text">2019/5/23总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-今天工作了什么？-1"><span class="toc-number">4.1.</span> <span class="toc-text">1.今天工作了什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-收获了什么？-1"><span class="toc-number">4.2.</span> <span class="toc-text">2.收获了什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-达到昨天目标了吗？-1"><span class="toc-number">4.3.</span> <span class="toc-text">3.达到昨天目标了吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-明天的目标是什么？-1"><span class="toc-number">4.4.</span> <span class="toc-text">4.明天的目标是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-近期的任务都有什么？-1"><span class="toc-number">4.5.</span> <span class="toc-text">5.近期的任务都有什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-对自己满意吗？-1"><span class="toc-number">4.6.</span> <span class="toc-text">6.对自己满意吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-导师建议"><span class="toc-number">4.7.</span> <span class="toc-text">7.导师建议</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2019-5-27"><span class="toc-number">5.</span> <span class="toc-text">2019/5/27</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-今天工作了什么？-2"><span class="toc-number">5.1.</span> <span class="toc-text">1.今天工作了什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-收获了什么？-2"><span class="toc-number">5.2.</span> <span class="toc-text">2.收获了什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-达到昨天目标了吗？-2"><span class="toc-number">5.3.</span> <span class="toc-text">3.达到昨天目标了吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-明天的目标是什么？-2"><span class="toc-number">5.4.</span> <span class="toc-text">4.明天的目标是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-近期的任务都有什么？-2"><span class="toc-number">5.5.</span> <span class="toc-text">5.近期的任务都有什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-对自己满意吗？-2"><span class="toc-number">5.6.</span> <span class="toc-text">6.对自己满意吗？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2019-5-28"><span class="toc-number">6.</span> <span class="toc-text">2019/5/28</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-今天工作了什么？-3"><span class="toc-number">6.1.</span> <span class="toc-text">1.今天工作了什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-收获了什么？-3"><span class="toc-number">6.2.</span> <span class="toc-text">2.收获了什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-达到昨天目标了吗？-3"><span class="toc-number">6.3.</span> <span class="toc-text">3.达到昨天目标了吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-明天的目标是什么？-3"><span class="toc-number">6.4.</span> <span class="toc-text">4.明天的目标是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-近期的任务都有什么？-3"><span class="toc-number">6.5.</span> <span class="toc-text">5.近期的任务都有什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-对自己满意吗？-3"><span class="toc-number">6.6.</span> <span class="toc-text">6.对自己满意吗？</span></a></li></ol></li></ol>
+                 </div>
+           <script type="text/javascript">
+          function showToc(){
+            var toc_article = document.getElementById("toc-article");
+            var show_toc_btn = document.getElementById("show-toc-btn");
+            toc_article.setAttribute("style","display:block");
+            show_toc_btn.setAttribute("style","display:none");
+            };
+          function showBtn(){
+            var toc_article = document.getElementById("toc-article");
+            var show_toc_btn = document.getElementById("show-toc-btn");
+            toc_article.setAttribute("style","display:none");
+            show_toc_btn.setAttribute("style","display:block");
+            };
+           </script>
+               
+            -->  
+        <!-- 目录内容结束 -->
+
+
+
         
   
     <h1 class="article-title" itemprop="name">
@@ -535,8 +568,8 @@ var _hmt = _hmt || [];
     </a>
   
   
-    <a href="/2016/04/07/怎么写博客/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">第一篇写一下写博客简单的流程</div>
+    <a href="/2016/04/07/孤独是你的必修课/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">孤独是你的必修课</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -728,6 +761,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Essay</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">machine learning</a>
               </li>
              
@@ -737,10 +774,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">读后感</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Essay</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -756,11 +789,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Blog</a>
+                <a href="javascript:void(0)" class="js-tag color2">Academic Writing</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Academic Writing</a>
+                <a href="javascript:void(0)" class="js-tag color5">Blog</a>
               </li>
             
             <div class="clearfix"></div>
