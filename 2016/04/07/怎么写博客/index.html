@@ -279,7 +279,7 @@ var _hmt = _hmt || [];
         <p>欢迎来到莫与的博客，第一篇记录了一下怎么写一篇博客，以方便之后写博客~<br><img src="https://mubu.com/document_image/ca89344f-a12e-4975-919c-01ace9f4c44e-3316715.jpg" alt="shulan"><br><a id="more"></a></p>
 <p>#从配置说起<br>下载安装Git与Node.js略过</p>
 <p>1.安装hexo<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g #-g表示全局安装, npm默认为当前项目安装</span><br></pre></td></tr></table></figure></p>
-<p>2.Hexo使用命令:<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;  #执行init命令初始化hexo到你指定的目录</span><br><span class="line">hexo generate       #自动根据当前目录下文件,生成静态网页 hexo g</span><br><span class="line">hexo server         #运行本地服务 hexo s</span><br><span class="line">hexo clean          #清理</span><br></pre></td></tr></table></figure></p>
+<p>2.Hexo使用命令:<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init <span class="xml"><span class="tag">&lt;<span class="name">folder</span>&gt;</span></span>  #执行init命令初始化hexo到你指定的目录</span><br><span class="line">hexo generate       #自动根据当前目录下文件,生成静态网页 hexo g</span><br><span class="line">hexo server         #运行本地服务 hexo s</span><br><span class="line">hexo clean          #清理</span><br></pre></td></tr></table></figure></p>
 <h1 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br></pre></td></tr></table></figure>
 <h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2. 配置"></a>2. 配置</h2><p>修改hexo根目录下的 _config.yml ： theme: yilia</p>
 <h2 id="3-更新"><a href="#3-更新" class="headerlink" title="3. 更新"></a>3. 更新</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes/yilia</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
@@ -294,8 +294,8 @@ var _hmt = _hmt || [];
 <h2 id="注意！"><a href="#注意！" class="headerlink" title="注意！"></a>注意！</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">写markdown的时候，用txt打开，一定要用UTF-8保存。否则中文乱码。</span><br></pre></td></tr></table></figure>
 <h1 id="最后加一幅图："><a href="#最后加一幅图：" class="headerlink" title="最后加一幅图："></a>最后加一幅图：</h1><p><img src="https://mubu.com/document_image/0a0cb2aa-3db9-425c-b09c-3fae711fb832-3316715.jpg" alt="1"></p>
 <h2 id="代码如下：-4"><a href="#代码如下：-4" class="headerlink" title="代码如下："></a>代码如下：</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">1</span>](<span class="link">https://mubu.com/document_image/0a0cb2aa-3db9-425c-b09c-3fae711fb832-3316715.jpg</span>)</span><br></pre></td></tr></table></figure>
-<p>#怎么加音乐：（具体功能百度htmlaudio标签）<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;audio id="audio" autoplay="autoplay"&gt;</span><br><span class="line"><span class="code">    &lt;source src="http://qzone.haoduoge.com/music1/2015-04-23/1429774382.mp3" type="audio/mp3"&gt;&lt;/source&gt;</span></span><br><span class="line">&lt;/audio&gt;</span><br></pre></td></tr></table></figure></p>
-<p>#怎么改字体加颜色：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;font color="red" face="宋体"&gt;摘要：&lt;/font&gt;</span><br></pre></td></tr></table></figure></p>
+<p>#怎么加音乐：（具体功能百度htmlaudio标签）<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">id</span>=<span class="string">"audio"</span> <span class="attr">autoplay</span>=<span class="string">"autoplay"</span>&gt;</span></span></span><br><span class="line"><span class="code">    &lt;source src="http://qzone.haoduoge.com/music1/2015-04-23/1429774382.mp3" type="audio/mp3"&gt;&lt;/source&gt;</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>#怎么改字体加颜色：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">"red"</span> <span class="attr">face</span>=<span class="string">"宋体"</span>&gt;</span></span>摘要：<span class="xml"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
 <p>#怎么加空格：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</span><br></pre></td></tr></table></figure></p>
 
       
@@ -500,18 +500,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2016/04/07/基于信息量对于信息记忆的研究/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/04/07/孤独是你的必修课/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          基于信息量对于信息记忆的研究
+          孤独是你的必修课
         
       </div>
     </a>
   
   
-    <a href="/2016/04/07/孤独是你的必修课/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">孤独是你的必修课</div>
+    <a href="/2016/04/07/《机器学习.绪论》读后感/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《机器学习.绪论》读后感</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -572,8 +572,8 @@ var _hmt = _hmt || [];
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
+   var notify = 'true' == true ? true : false;
+   var verify = 'true' == true ? true : false;
     window.onload = function() {
         new Valine({
             el: '#vcomment',
@@ -725,6 +725,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">machine learning</a>
               </li>
              
@@ -734,10 +738,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">读后感</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">blog</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -753,11 +753,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">转载</a>
+                <a href="javascript:void(0)" class="js-tag color2">Academic Writing</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Academic Writing</a>
+                <a href="javascript:void(0)" class="js-tag color3">转载</a>
               </li>
              
               <li class="article-tag-list-item">
