@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://dongshuyan.com/404.html</loc>
+    
+    <lastmod>2019-06-06T11:33:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://dongshuyan.com/2019/05/24/hexo%E5%8D%9A%E5%AE%A2%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</loc>
     
     <lastmod>2019-06-06T11:24:58.000Z</lastmod>
@@ -173,13 +180,6 @@
     <loc>http://dongshuyan.com/2019/05/29/%E5%85%B3%E4%BA%8E%E8%BE%A9%E8%AE%BA/</loc>
     
     <lastmod>2019-05-29T06:59:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://dongshuyan.com/404.html</loc>
-    
-    <lastmod>2019-05-29T06:56:29.000Z</lastmod>
     
   </url>
   
