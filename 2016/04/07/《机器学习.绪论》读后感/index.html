@@ -18,7 +18,7 @@
 <meta property="og:description" content="导读这本书我很早之前就有所耳闻。因为这本书的作者是我非常仰慕的周志华老师再加上我本人对机器学习很感兴趣，所以我也试着买了一本来读。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://mubu.com/document_image/910da78c-961d-4ea5-80a8-5130554e7510-3316715.jpg">
-<meta property="og:updated_time" content="2019-05-29T07:00:42.000Z">
+<meta property="og:updated_time" content="2019-06-08T14:37:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《机器学习.绪论》读后感">
 <meta name="twitter:description" content="导读这本书我很早之前就有所耳闻。因为这本书的作者是我非常仰慕的周志华老师再加上我本人对机器学习很感兴趣，所以我也试着买了一本来读。">
@@ -273,7 +273,47 @@ var _hmt = _hmt || [];
         
       </header>
     
+
+     
+
+
     <div class="article-entry" itemprop="articleBody">
+    <!-- 文章头增加转载声明 -->
+
+      
+      
+        <div class="topdeclare">
+
+           <hr>
+          <strong>如需转载，请根据</strong>
+          <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+          许可，附上本文作者及链接。
+          <br>
+
+          <strong>本文作者：</strong>
+          
+            Shuyan
+          
+          <br>
+          <strong>作者昵称：</strong>
+          
+            莫与
+          
+          <br>
+
+          <strong>本文链接：</strong>
+          <a rel="license" href="http://dongshuyan.com/2016/04/07/《机器学习.绪论》读后感/">http://dongshuyan.com/2016/04/07/《机器学习.绪论》读后感/</a>
+          <br>
+          <hr>
+
+        </div>
+      
+      
+      <!-- 文章头增加转载声明结束 -->
+
+
+
+
       
         <h2 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h2><p>这本书我很早之前就有所耳闻。因为这本书的作者是我非常仰慕的周志华老师再加上我本人对机器学习很感兴趣，所以我也试着买了一本来读。<br> <img src="https://mubu.com/document_image/910da78c-961d-4ea5-80a8-5130554e7510-3316715.jpg" alt="book"><br><a id="more"></a></p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>这本书读着读着，我渐渐开始问自己：我到底是为什么喜欢机器学习，我究竟想用他来做什么，还是只是“好事者”。仔细想想，之前确实有被其名字吸引的成分在，感觉是这是趋势，于是便同很多人一般趋之若鹜。但是从暑假小学期自己编写了可以自己走的2048到计算机博弈大赛再到前一阵的AlphaGo人机大战，我渐渐认为我实在喜欢这种与计算机打交道的感觉。看过像名侦探柯南剧场版《贝克街的亡灵》中的“茧”，也看过像《刀剑神域》里面的游戏那样，我希望并喜欢着去看到这样的存在。所以我目前给自己定下的小目标是运用机器学习的知识来试着编写一个小的智能算法。比如计算机博弈又或者是模式识别。<br>进入正题，机器学习，在这本书的绪论里面，我见识到的是机器学习整个庞大的体系框架，从符号主义学习，再到知识期，再到连结主义等等；包括“机械学习”、“示教学习”、“类比学习”以及“归纳学习”的分类都着实让我有一种打开眼界的感觉。如同把自己这个井底之蛙带入天空领略风景。之前我狭义地认为机器学习大多是“神经网咯”“深度学习”，现在想想幸好没有拿出去乱说，否则真是要让人笑掉大牙。<br>本书以如何挑选一个好西瓜引入机器学习的正题，在我现在的初步认为比较像是在这个包含这个西瓜各种外部属性的多维空间中将属于好西瓜的那部分空间找出来。而且这段空间应该是连续的，也就是说我感觉很大程度上，这应该是一片空间，而我们要做的就是将其边界找出来。这样以后再有新的属性，我们只需要将其定位在空间里面看看是不是属于好瓜的范围就可以判断有这样属性的瓜是不是好瓜了。<br>现在也突然可以理解为什么说原始的神经网络无法解决XOR的问题了，毕竟对于裸的是神经网络来说，每个神经元都是在做梯度下降法的拟合（这里不知道可不可以用遗传算法呀？以我短浅的学识感觉神经网络应该是可以解决的），所以这样的神经网络就是在做线性的拟合。所以说无法解决xor这样的非线性问题。及时给如大量的a与b已经其结果a^b也难以训练出很好的效果。<br>基本属于：<br>数据集(data set)：记录的集合。<br>示例(instance)：每条记录是关于一个事件或对象的描述。<br>属性(attribute)或特征(feature)：反省事件或对象在某方面的表现或性质的事项。<br>属性值(attribute value)：属性上的取值。<br>属性空间(attribute space)、样本空间(sample sapce)或输入空间：属性张成的空间。<br>特征向量(feature vector):根据属性定位其在属性空间中的点对应的坐标向量。<br>学习(leaning)或训练(training)：从数据中学得模型的过程。<br>训练数据(training data)：训练过程中使用的数据。<br>训练样本(training sample)：训练数据终端没一个样本。<br>训练集(training set)：训练样本组成的集合。<br>假设(hypothesis)：学得模型对应了关于数据的某种潜。<br>分类(classification)：若我们预测的是离散值，此类学习任务称为“分类”。<br>回归(regression)：若我们预测的是连续值，此类学习任务称为“回归”。<br>簇(cluster)：将训练集中的样本分成若干组，每个组称为“簇”。<br>泛化(generalization)能力：学得模型是用于新样本的能力。<br>归纳(induction)：从特殊到一般的“泛化”过程。<br>演绎(deduction)：从一般到特殊的“特化”(specialization)。<br>奥卡姆剃刀：若有多个假设与观察一致，则选最简单的那个。<br>没有免费午餐定理：总误差与学习方法无关。<br>绪论的学习让我对机器学习有了一个整体的认识。但是我目前还是觉得机器学习是以拟合为主的，不知道他怎么样来解决一些非线性问题。</p>
@@ -481,11 +521,11 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2016/04/07/基于信息量对于信息记忆的研究/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/04/07/单调栈学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          基于信息量对于信息记忆的研究
+          单调栈学习笔记
         
       </div>
     </a>
@@ -690,6 +730,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Daily</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Original</a>
               </li>
              
@@ -698,11 +742,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Daily</a>
+                <a href="javascript:void(0)" class="js-tag color1">Essay</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Essay</a>
+                <a href="javascript:void(0)" class="js-tag color5">blog</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -723,10 +767,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">自学教程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">blog</a>
               </li>
              
               <li class="article-tag-list-item">

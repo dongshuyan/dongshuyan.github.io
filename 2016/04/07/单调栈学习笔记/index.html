@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Shuyan&#39;s blog">
 <meta property="og:description" content="作用&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;利用单调栈，我们可以以O(n)的复杂度快速求解在a[1]~a[n]中每一个元素向某一个方向上的最长递减（或非递减等）区间长度。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-29T07:00:36.000Z">
+<meta property="og:updated_time" content="2019-06-08T14:38:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单调栈学习笔记">
 <meta name="twitter:description" content="作用&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;利用单调栈，我们可以以O(n)的复杂度快速求解在a[1]~a[n]中每一个元素向某一个方向上的最长递减（或非递减等）区间长度。">
@@ -271,7 +271,47 @@ var _hmt = _hmt || [];
         
       </header>
     
+
+     
+
+
     <div class="article-entry" itemprop="articleBody">
+    <!-- 文章头增加转载声明 -->
+
+      
+      
+        <div class="topdeclare">
+
+           <hr>
+          <strong>如需转载，请根据</strong>
+          <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+          许可，附上本文作者及链接。
+          <br>
+
+          <strong>本文作者：</strong>
+          
+            Shuyan
+          
+          <br>
+          <strong>作者昵称：</strong>
+          
+            莫与
+          
+          <br>
+
+          <strong>本文链接：</strong>
+          <a rel="license" href="http://dongshuyan.com/2016/04/07/单调栈学习笔记/">http://dongshuyan.com/2016/04/07/单调栈学习笔记/</a>
+          <br>
+          <hr>
+
+        </div>
+      
+      
+      <!-- 文章头增加转载声明结束 -->
+
+
+
+
       
         <h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;利用单调栈，我们可以以O(n)的复杂度快速求解在a[1]~a[n]中每一个元素向某一个方向上的最长递减（或非递减等）区间长度。<br><a id="more"></a></p>
 <h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;a[i]    :第i个元素值<br>&nbsp;&nbsp;&nbsp;&nbsp;st        :为单调队列<br>&nbsp;&nbsp;&nbsp;&nbsp;L[i]    :为对于第i个元素，其向某个方向的最长递减(非递减)元素的下标。<br>&nbsp;&nbsp;&nbsp;&nbsp;下面以向左非递减为例：<br>&nbsp;&nbsp;&nbsp;&nbsp;建立单调队列st，对于从1开始每个元素进栈（由于是向左所以从左向右遍历）：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1）    若原来栈空，则直接进栈。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L[i]=1(1表示对于i个元素，从他一直到第1个元素都是每递减的)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;st[top++]=a[i];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2）    若原来栈不空，且栈顶元素st[top]&gt;a[i]，则说明即使加入a[i],对于i来说，其向左依旧是非递减。所以直接进栈。<font color="red">（注意：若要非递减，则不可以带等号！若要严格递减，则带等号，可以手动试）</font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L[i]=st[top]+1;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;st[top++]=a[i];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3）    若原来栈不空，且栈顶元素st[top]&lt;=a[i]，则一直出栈到满足st[top]&gt;a[i]或者栈为空为止，因为这样才能保证对于a[i]，其要找的是向左不递减。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (top&gt;0 &amp;&amp; a[st[top-1]]&gt;=a[j]) top–;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l[j]=top==0?1:(st[top-1]+1);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;st[top++]=j;</p>
@@ -519,18 +559,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2016/04/07/怎么写博客/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/04/07/基于信息量对于信息记忆的研究/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          从零搭建博客 教程 Hexo GitHub Mac Windows
+          基于信息量对于信息记忆的研究
         
       </div>
     </a>
   
   
-    <a href="/2016/04/07/基于信息量对于信息记忆的研究/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">基于信息量对于信息记忆的研究</div>
+    <a href="/2016/04/07/《机器学习.绪论》读后感/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《机器学习.绪论》读后感</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -733,6 +773,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Daily</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Original</a>
               </li>
              
@@ -741,11 +785,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Daily</a>
+                <a href="javascript:void(0)" class="js-tag color1">Essay</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Essay</a>
+                <a href="javascript:void(0)" class="js-tag color5">blog</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -766,10 +810,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">自学教程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">blog</a>
               </li>
              
               <li class="article-tag-list-item">
