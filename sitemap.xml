@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://dongshuyan.com/photo/index.html</loc>
+    
+    <lastmod>2019-06-10T13:44:36.007Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://dongshuyan.com/2019/05/24/hexo%E5%8D%9A%E5%AE%A2%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</loc>
     
     <lastmod>2019-06-10T13:19:39.112Z</lastmod>
@@ -180,13 +187,6 @@
     <loc>http://dongshuyan.com/2019/06/05/Mac%E7%81%B5%E6%B4%BB%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2019-06-10T05:45:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://dongshuyan.com/photo/index.html</loc>
-    
-    <lastmod>2019-06-10T05:45:26.000Z</lastmod>
     
   </url>
   
