@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://mubu.com/document_image/a94c8872-d402-4ce3-afc2-ea2705e95aeb-3316715.jpg">
 <meta property="og:image" content="https://mubu.com/document_image/02f8de29-192e-4dee-a35d-9c243bd41f1d-3316715.jpg">
 <meta property="og:image" content="https://mubu.com/document_image/64ef2c18-ea8b-46e2-bf96-052dbf875c92-3316715.jpg">
-<meta property="og:updated_time" content="2019-06-10T05:47:31.000Z">
+<meta property="og:updated_time" content="2019-06-10T13:19:39.112Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo Yilia 高级配置">
 <meta name="twitter:description" content="这篇文章列举了搭建博客至今遇到所有问题的解决方法以及一些新功能的添加方法。这篇文章集合了几乎所有的Hexo Yilia进阶用法教程，包括且不限于：1.微信分享异常 2.“所有文章”无显示 3.显示总文章数 4.置顶文章 5.文章加密 6.文章点击数统计 7.版权声明 8.字数、阅读时长 9.点击红心 10.文章结束 11.404 12.Sitemap 13.自动推送 14.百度统计 15.链接提交">
@@ -294,6 +294,24 @@ var _hmt = _hmt || [];
 
 
     <div class="article-entry" itemprop="articleBody">
+
+    <!--文章头google广告-->
+    
+        <hr>
+        <strong>⬇️下面这个看起来像广告的东西，其实是只个图片，根本打不开的。不过听说有时候⬇️</strong>
+        <br>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- googlead1 -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8955547868703063" data-ad-slot="3853918361" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    
+    <!--文章头google广告2结束-->
+
+
+
+
     <!-- 文章头增加转载声明 -->
 
       
@@ -303,7 +321,7 @@ var _hmt = _hmt || [];
            <hr>
           <strong>如需转载，请根据</strong>
           <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
-          许可，附上本文作者及链接。
+          <strong>许可，附上本文作者及链接。</strong>
           <br>
 
           <strong>本文作者：</strong>
@@ -474,7 +492,11 @@ var _hmt = _hmt || [];
 <p>将网站同步好<br>6.同步好之后返回Google Adsense点击已经粘贴代码。<br>google从网站检测到这段代码即可，等待启动即可。</p>
 <h2 id="21-3-审核通过"><a href="#21-3-审核通过" class="headerlink" title="21.3 审核通过"></a>21.3 审核通过</h2><p>稍等一天时间，如果没有问题，即可审核通过。<br>有问题就改问题，然后在申请。</p>
 <h2 id="21-4-添加展示广告"><a href="#21-4-添加展示广告" class="headerlink" title="21.4 添加展示广告"></a>21.4 添加展示广告</h2><p>1.在网页上找到“广告” -&gt; “广告单元” -&gt; “创建新的广告单元” -&gt; “展示广告”<br>2.然后再界面里面先填写一个名字(例如ad_google_1)<br>3.点击创建<br>4.将生成的代码添加到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">博客目录\themes\yilia\layout\_partial\article.ejs</span><br></pre></td></tr></table></figure></p>
-<p>中对应适当位置即可，注意别让广告扰乱了页面布局，影响全局美感。<br>5.添加完毕<br>在网页中点击“大功告成”<br>6.想网页上传<br>hexo clean<br>hexo g<br>hexo d<br>7.等待一小时左右大约会出现广告</p>
+<p>中对应适当位置即可，注意别让广告扰乱了页面布局，影响全局美感。<br>添加代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">可以在文章开头添加：</span><br><span class="line">    &lt;!--文章头google图片--&gt;</span><br><span class="line">    &lt;% if ((theme.googlead_type === 2 || (theme.googlead_type === 1 &amp;&amp; post.googlead)) &amp;&amp; !index)&#123; %&gt;</span><br><span class="line">        &lt;hr&gt;</span><br><span class="line">        &lt;strong&gt;⬇️下面这个看起来像广告的东西，其实是只个图片，根本打不开的。不过听说有时候⬇️&lt;/strong&gt;</span><br><span class="line">        &lt;br&gt;</span><br><span class="line">        &lt;script async src=&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">        &lt;!-- googlead1 --&gt;</span><br><span class="line">        &lt;ins class=&quot;adsbygoogle&quot;</span><br><span class="line">             style=&quot;display:block&quot;</span><br><span class="line">             data-ad-client=&quot;ca-pub-8955547868703063&quot;</span><br><span class="line">             data-ad-slot=&quot;3853918361&quot;</span><br><span class="line">             data-ad-format=&quot;auto&quot;</span><br><span class="line">             data-full-width-responsive=&quot;true&quot;&gt;&lt;/ins&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">             (adsbygoogle = window.adsbygoogle || []).push(&#123;&#125;);</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line">    &lt;!--文章头google图片结束--&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">可以在结尾处添加：</span><br><span class="line">&lt;!-- 尾google广告 --&gt;</span><br><span class="line">      &lt;% if ((theme.googlead_type === 2 || (theme.googlead_type === 1 &amp;&amp; post.googlead)) &amp;&amp; !index)&#123; %&gt;</span><br><span class="line">          &lt;hr&gt;</span><br><span class="line">          &lt;strong&gt;⬇️下面这个才是真正的广告哦，如果感觉真的从文章中有带走新东西的话，可以帮我点一下哦⬇️&lt;/strong&gt;</span><br><span class="line">        &lt;br&gt;</span><br><span class="line">          这里是google网页生成的代码</span><br><span class="line">      &lt;% &#125; %&gt;</span><br><span class="line">&lt;!-- 尾google广告 --&gt;</span><br></pre></td></tr></table></figure></p>
+<p>然后还需要再<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/theme/yilia/_config.yml</span><br></pre></td></tr></table></figure></p>
+<p>中合适位置添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#google广告基础设定：0-关闭广告； 1-文章对应的md文件里有googlead: true属性，才有广告； 2-所有文章均有广告</span><br><span class="line">googlead_type: 1</span><br></pre></td></tr></table></figure></p>
+<p>使用教程如上面提示：<br>0-关闭广告；<br>1-文章对应的md文件里有googlead: true属性，才有广告；<br>2-所有文章均有广告</p>
+<p>5.添加完毕<br>在网页中点击“大功告成”<br>6.想网页上传<br>hexo clean<br>hexo g<br>hexo d<br>7.等待一小时左右大约会出现广告</p>
 <h1 id="22-Gitment-Gitalk评论系统"><a href="#22-Gitment-Gitalk评论系统" class="headerlink" title="22 Gitment/Gitalk评论系统"></a>22 Gitment/Gitalk评论系统</h1><p>感觉gitment 和 gitalk也不错<br>可以参考<br><a href="https://ziven.cc/2018/07/03/Hexo%E4%B8%BB%E9%A2%98yilia%E5%A2%9E%E5%8A%A0gitalk%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/" target="_blank" rel="noopener">Hexo主题yilia增加gitalk评论插件</a><br><a href="https://cloudy-liu.github.io/2018/07/14/Hexo%E6%9B%B4%E6%8D%A2%E4%B8%BAGitTalk%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" target="_blank" rel="noopener">Hexo-yilia使用gitment/gitalk评论系统 </a><br><a href="https://zhuanlan.zhihu.com/p/58722547" target="_blank" rel="noopener">Gitment给基于hexo的yilia主题的博客搭建免费评论系统</a></p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.jianshu.com/p/bdd1239863de" target="_blank" rel="noopener">Hexo文章置顶的方法</a><br><a href="https://blog.csdn.net/adobeid/article/details/82704982" target="_blank" rel="noopener">Hexo增加置顶属性</a><br><a href="https://www.jianshu.com/p/adb7640c97c2" target="_blank" rel="noopener">Hexo 基于yilia主题及其它插件优化</a><br><a href="https://blog.csdn.net/lynnbest/article/details/79845944" target="_blank" rel="noopener">Hexo yilia 主题一揽子使用方案</a><br><a href="https://blog.zscself.com/posts/ee4d9ecb/" target="_blank" rel="noopener">在Hexo中自动为Yilia主题增加版权声明</a><br><a href="https://blog.csdn.net/dta0502/article/details/89607895" target="_blank" rel="noopener">Hexo-Yilia进阶笔记</a><br><a href="http://lawlite.me/2017/04/17/Hexo-yilia%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E5%92%8C%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91/#%E4%BA%8C%E3%80%81%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E5%8A%9F%E8%83%BD" target="_blank" rel="noopener">Hexo+yilia主题实现文章目录和添加视频</a><br><a href="https://www.jianshu.com/p/f054333ac9e6" target="_blank" rel="noopener">hexo的next主题个性化教程:打造炫酷网站</a><br><a href="https://gzx97.com/posts/20223/" target="_blank" rel="noopener">Hexo博客Yilia主题修改记录</a><br><a href="https://blog.diqigan.cn/posts/hexo-theme-yilia-advanced-settings.html" target="_blank" rel="noopener">Hexo Yilia 主题进阶配置</a><br><a href="https://zhuanlan.zhihu.com/p/28468742" target="_blank" rel="noopener">Hexo博客提交百度和Google收录</a><br><a href="https://github.com/DesertsP/Valine-Admin" target="_blank" rel="noopener">DesertsP/Valine-Admin</a><br><a href="https://deserts.io/valine-admin-document/" target="_blank" rel="noopener">Valine Admin 配置手册</a><br><a href="https://deserts.io/diy-a-comment-system/#%E8%AF%84%E8%AE%BA%E5%AE%89%E8%A3%85" target="_blank" rel="noopener">Valine: 独立博客评论系统</a><br><a href="https://github.com/xCss/Valine/issues" target="_blank" rel="noopener">github_Valine</a><br><a href="https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md" target="_blank" rel="noopener">动态版娘</a><br><a href="http://www.yueluo.xyz/archives/a24869c4.html" target="_blank" rel="noopener">Hexo-添加看板娘(进阶版)</a><br><a href="https://zhuanlan.zhihu.com/p/66052182" target="_blank" rel="noopener">hexo yilia 主题添加 google 广告</a><br><a href="https://kurumi.ink/index.php/archives/51/" target="_blank" rel="noopener">Google AdSense 申请日志及教程</a><br><a href="https://cloudy-liu.github.io/2018/07/14/Hexo%E6%9B%B4%E6%8D%A2%E4%B8%BAGitTalk%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" target="_blank" rel="noopener">Hexo-yilia使用gitment/gitalk评论系统 </a><br><a href="https://zhuanlan.zhihu.com/p/58722547" target="_blank" rel="noopener">Gitment给基于hexo的yilia主题的博客搭建免费评论系统</a><br><a href="https://blog.csdn.net/Aoman_Hao/article/details/82049821" target="_blank" rel="noopener">Hexo博客yilia主题首页添加helper-live2d模型插件</a><br><a href="https://qianlei6148.github.io/2018/10/11/hexo%E6%A8%A1%E7%89%88yilia%E6%B7%BB%E5%8A%A0%E5%8F%AF%E7%88%B1%E7%9A%84%E7%9C%8B%E6%9D%BF%E5%A8%98/" target="_blank" rel="noopener">hexo模版yilia添加可爱的看板娘</a></p>
 
@@ -554,8 +576,11 @@ var _hmt = _hmt || [];
 
       <!-- 增加版权声明结束 -->
 
-      <!-- google ad -->
+      <!-- 尾google广告 -->
       
+          <hr>
+          <strong>⬇️下面这个才是真正的广告哦，如果感觉真的从文章中有带走新东西的话，可以帮我点一下哦⬇️</strong>
+        <br>
           <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <!-- ad_google_1 -->
           <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8955547868703063" data-ad-slot="8865791640" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -563,7 +588,7 @@ var _hmt = _hmt || [];
                (adsbygoogle = window.adsbygoogle || []).push({});
           </script>
       
-      <!-- google ad结束 -->
+      <!-- 尾google广告 -->
 
 
       
@@ -673,14 +698,6 @@ var _hmt = _hmt || [];
 
 <div class="mask js-mask"></div>
       
-      <!--google广告2-->
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- googlead1 -->
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8955547868703063" data-ad-slot="3853918361" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      <!--google广告2结束-->
       <div class="clearfix"></div>
     </div>
 
@@ -919,11 +936,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Essay</a>
+                <a href="javascript:void(0)" class="js-tag color5">blog</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">blog</a>
+                <a href="javascript:void(0)" class="js-tag color1">Essay</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -943,7 +960,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">自学教程</a>
+                <a href="javascript:void(0)" class="js-tag color2">Academic Writing</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -951,7 +968,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Academic Writing</a>
+                <a href="javascript:void(0)" class="js-tag color5">自学教程</a>
               </li>
              
               <li class="article-tag-list-item">
