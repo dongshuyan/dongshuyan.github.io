@@ -1,3 +1,4 @@
+http://dongshuyan.com/2019/06/11/buy_keyboard/
 http://dongshuyan.com/2019/06/09/NIZ使用/
 http://dongshuyan.com/2019/06/08/键盘基本原理/
 http://dongshuyan.com/2019/06/07/学生应该选择学习还是选择另一半/
@@ -17,4 +18,3 @@ http://dongshuyan.com/2019/05/29/关于加密/
 http://dongshuyan.com/2019/05/26/学术论文写作思维导图/
 http://dongshuyan.com/2019/05/25/英文学术论文写作工坊_一/
 http://dongshuyan.com/2019/05/24/hexo博客注意事项/
-http://dongshuyan.com/2019/05/23/如何加密磁盘_VeraCrypt(全平台)/
