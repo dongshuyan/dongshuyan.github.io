@@ -1,3 +1,4 @@
+http://dongshuyan.com/2019/06/20/logic_correlation/
 http://dongshuyan.com/2019/06/19/understanding/
 http://dongshuyan.com/2019/06/16/timestore/
 http://dongshuyan.com/2019/06/13/choosekeyboard/
@@ -17,4 +18,3 @@ http://dongshuyan.com/2019/06/01/游戏为什么好玩/
 http://dongshuyan.com/2019/06/01/游戏到底是什么_游戏的意义是什么/
 http://dongshuyan.com/2019/06/01/解决问题万能的方法/
 http://dongshuyan.com/2019/06/01/为什么喜欢看直播/
-http://dongshuyan.com/2019/06/01/白话分类器/
