@@ -43,7 +43,7 @@
 <meta property="og:image" content="https://mubu.com/document_image/36c83e28-3c4c-4af6-9dd6-0a7a518c9347-3316715.jpg">
 <meta property="og:image" content="https://mubu.com/document_image/15716b30fa2d730db-3316715.jpg">
 <meta property="og:image" content="https://mubu.com/document_image/e516b30fa124e15-3316715.jpg">
-<meta property="og:updated_time" content="2019-06-26T07:24:36.934Z">
+<meta property="og:updated_time" content="2019-06-26T07:27:36.262Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PLUM NIZ micro84 双模 键盘使用踩坑指南&#x2F;教程&#x2F;技巧">
 <meta name="twitter:description" content="NIZ键盘 使用技巧大全：">
@@ -365,7 +365,7 @@ var _hmt = _hmt || [];
 
       
         <p>NIZ键盘 使用技巧大全：<br><a id="more"></a><br>我买的是micro84双模，因为我平时Mac用的最多，而这款的键位跟Mac最为类似。<br>如果有小伙伴也是Mac的话，我还是很推荐这一款键盘的。<br>所以我下面说的内容基本都是在Mac下一些踩坑经历以及使用技巧。</p>
-<h1 id="0-购买键盘之后怎么检查"><a href="#0-购买键盘之后怎么检查" class="headerlink" title="0 购买键盘之后怎么检查"></a>0 购买键盘之后怎么检查</h1><p>1.先看键盘外观首先整体有没有问题<br>2.放在桌子上，稳不稳<br>3.把各个支脚都试一遍，看看稳定性怎么样。是不是很稳<br>4.看看每个键是否都完好<br>5.试试每个键是不是功能都没有问题<br>6.按下每个键，仔细听听，有没有弹簧音！（蛮重要）<br>暂时想到这么多</p>
+<h1 id="0-购买键盘之后怎么检查"><a href="#0-购买键盘之后怎么检查" class="headerlink" title="0 购买键盘之后怎么检查"></a>0 购买键盘之后怎么检查</h1><p>1.先看键盘外观首先整体有没有问题<br>2.放在桌子上，稳不稳（据说一般不平的话，掰一下就好了😂）<br>3.把各个支脚都试一遍，看看稳定性怎么样。是不是很稳<br>4.看看每个键是否都完好<br>5.试试每个键是不是功能都没有问题<br>6.按下每个键，仔细听听，有没有弹簧音！（蛮重要）<br>暂时想到这么多</p>
 <h1 id="1-NIZ踩坑经历"><a href="#1-NIZ踩坑经历" class="headerlink" title="1 NIZ踩坑经历"></a>1 NIZ踩坑经历</h1><h2 id="1-1-Mac蓝牙无法连接NIZ"><a href="#1-1-Mac蓝牙无法连接NIZ" class="headerlink" title="1.1 Mac蓝牙无法连接NIZ"></a>1.1 Mac蓝牙无法连接NIZ</h2><p>我的Mac版本是：MacBook Pro (Retina, 15-inch, Mid 2015)<br>我解决了！！！<br>解决方法是将系统升级到Mojave<br>也就是说是系统的问题！之前的系统不支持！！！</p>
 <details><summary><font color="darkred">之前的回答</font></summary><br>这个我是真的没辙了，据说是我Mac版本问题？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">连不上的具体表现为：</span><br><span class="line">1.首先NIZ打开蓝牙，选用任意一个蓝牙端口</span><br><span class="line">2.Mac打开蓝牙搜索到“Bluetooth keyboard”</span><br><span class="line">3.点击连接，会出现对应的连接密码</span><br><span class="line">4.在NIZ键盘上敲击这几个密码，然后敲击回车键</span><br><span class="line">5.这个时候Mac本身没有反应，我点击连接 「正常来说到这里就正常连接了」</span><br><span class="line">6.Mac会先显示已连接（在此期间，键盘按键无反应）</span><br><span class="line">7.五秒左右Mac与NIZ断开连接（这个过程跟NIZ在输密码阶段没有按键的结果基本一样）</span><br></pre></td></tr></table></figure><br><br>根据我的Mac的症状，NIZ给出的解决方式是：<br>1.重置Mac的SMC<br>2.重置Mac的PRAM/NVRAM<br><a href="https://support.apple.com/zh-cn/HT201295" target="_blank" rel="noopener">苹果官网-如何重置 Mac 上的系统管理控制器 (SMC)</a><br><a href="https://support.apple.com/zh-cn/HT204063" target="_blank" rel="noopener">苹果官网-重置 Mac 上的 NVRAM 或 PRAM</a><br>知乎教程：<br>首先重置SMC，重置SMC步骤如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">关闭电脑</span><br><span class="line">将 MagSafe 电源适配器连接到电源和Mac（如果尚未连接的话）</span><br><span class="line">在内建键盘上，同时按下（左侧）Shift-Control-Option 键和电源按钮</span><br><span class="line">同时松开所有键和电源按钮</span><br><span class="line">按下电源按钮打开电脑</span><br><span class="line"></span><br><span class="line">注：重置 SMC 时，MagSafe 电源适配器上的 LED 指示灯可能会更改状态或暂时关闭。</span><br></pre></td></tr></table></figure><br><br>然后重置NVRAM/PRAM，步骤如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.关闭 Mac</span><br><span class="line">2.在键盘上找到以下按键：Command (⌘)、Option、P 和 R</span><br><span class="line">3.您需要在步骤 4 中同时按住这些键</span><br><span class="line">4.启动电脑。出现灰屏前按住 Command-Option-P-R 键。按下这些键，直到电脑重新启动，您会再次听到启动声</span><br><span class="line">5.松开这些键</span><br></pre></td></tr></table></figure><br><br>店家教程：<br><img src="https://mubu.com/document_image/8d696258-bb96-49ad-bc3b-d206b643deec-3316715.jpg" alt><br><img src="https://mubu.com/document_image/c367406d-fd3c-4813-a246-89bc04782552-3316715.jpg" alt><br>最后我自己的解决方式是买了NIZ蓝牙适配器，即插即用（现在都在用线）<br>之所以还是选择了蓝牙版本是因为，感觉蓝牙还是可能比较好用，毕竟可以连接手机（苹果安卓）、Ipad、Windows电脑。<br>而且价钱不差太多。<br></details>
 
@@ -829,7 +829,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">paper</a>
+                <a href="javascript:void(0)" class="js-tag color1">essay</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -837,11 +837,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">essay</a>
+                <a href="javascript:void(0)" class="js-tag color1">paper</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">daily</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">blog</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -857,10 +861,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">blog</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
@@ -869,11 +869,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">转载</a>
+                <a href="javascript:void(0)" class="js-tag color4">academic</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">academic</a>
+                <a href="javascript:void(0)" class="js-tag color3">转载</a>
               </li>
             
             <div class="clearfix"></div>
