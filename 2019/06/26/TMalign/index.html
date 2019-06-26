@@ -20,15 +20,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://dongshuyan.com">
-  <title>Tag: daily | Shuyan&#39;s blog</title>
+  <title>TMalign全解读 | Shuyan&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Shuyan&#39;s blog">
-<meta property="og:url" content="http://dongshuyan.com/tags/daily/index.html">
+  <meta name="description" content="源代码解读这里主要对源代码中各个变量函数的用户，输入，输出进行记录。 变量12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849//global variables 全局变量double D0_MIN;                             //for d0">
+<meta name="keywords" content="original,paper">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TMalign全解读">
+<meta property="og:url" content="http://dongshuyan.com/2019/06/26/TMalign/index.html">
 <meta property="og:site_name" content="Shuyan&#39;s blog">
+<meta property="og:description" content="源代码解读这里主要对源代码中各个变量函数的用户，输入，输出进行记录。 变量12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849//global variables 全局变量double D0_MIN;                             //for d0">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-06-26T03:05:08.502Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shuyan&#39;s blog">
+<meta name="twitter:title" content="TMalign全解读">
+<meta name="twitter:description" content="源代码解读这里主要对源代码中各个变量函数的用户，输入，输出进行记录。 变量12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849//global variables 全局变量double D0_MIN;                             //for d0">
   
     <link rel="alternative" href="/atom.xml" title="Shuyan&#39;s blog" type="application/atom+xml">
   
@@ -221,100 +226,428 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-TMalign" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/daily_english/" class="archive-article-date">
-  	<time datetime="2019-05-22T15:24:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+
+      <!-- 目录内容 -->
+      <!--
+        
+            <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+                  <span class="btn-bg"></span>
+                  <span class="btn-text">文章导航</span>
+                  </p>
+          <div id="toc-article" class="toc-article">
+              <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+            <strong class="toc-title">文章目录</strong>
+                   <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#源代码解读"><span class="toc-number">1.</span> <span class="toc-text">源代码解读</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#变量"><span class="toc-number">1.1.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数"><span class="toc-number">1.2.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#load-PDB-allocate-memory-xname-yname"><span class="toc-number">1.2.1.</span> <span class="toc-text">load_PDB_allocate_memory(xname, yname)</span></a></li></ol></li></ol></li></ol>
+                 </div>
+           <script type="text/javascript">
+          function showToc(){
+            var toc_article = document.getElementById("toc-article");
+            var show_toc_btn = document.getElementById("show-toc-btn");
+            toc_article.setAttribute("style","display:block");
+            show_toc_btn.setAttribute("style","display:none");
+            };
+          function showBtn(){
+            var toc_article = document.getElementById("toc-article");
+            var show_toc_btn = document.getElementById("show-toc-btn");
+            toc_article.setAttribute("style","display:none");
+            show_toc_btn.setAttribute("style","display:block");
+            };
+           </script>
+               
+            -->  
+        <!-- 目录内容结束 -->
+
+
+
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/daily_english/">Daily English Learning</a>
+    <h1 class="article-title" itemprop="name">
+      TMalign全解读
     </h1>
   
 
-        <div class="article-info info-on-right">
+        <!--显示阅读次数-->
+        
+          <br>
+          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+          <span class="icon-sort"></span>
+          <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+                    👁 <span id="busuanzi_value_page_pv"></span> &nbsp;&nbsp;
+          </span>
+          </a>
+        
+        <!--显示阅读次数完毕-->
+
+
+        
+        <a href="/2019/06/26/TMalign/" class="archive-article-date">
+  	<time datetime="2019-06-26T02:37:13.634Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-26</time>
+</a>
+        
+      </header>
+    
+
+     
+
+
+    <div class="article-entry" itemprop="articleBody">
+
+    <!--文章头google图片-->
+    
+    <!--文章头google图片结束-->
+
+
+
+
+    <!-- 文章头增加转载声明 -->
+
+      
+      
+        <div class="topdeclare">
+
+           <hr>
+          <strong>如需转载，请根据</strong>
+          <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+          <strong>许可，附上本文作者及链接。</strong>
+          <br>
+
+          <strong>本文作者：</strong>
           
+            Shuyan
+          
+          <br>
+          <strong>作者昵称：</strong>
+          
+            莫与
+          
+          <br>
+
+          <strong>本文链接：</strong>
+          <a rel="license" href="http://dongshuyan.com/2019/06/26/TMalign/">http://dongshuyan.com/2019/06/26/TMalign/</a>
+          <br>
+          <hr>
+
+        </div>
+      
+      
+      <!-- 文章头增加转载声明结束 -->
+
+
+
+
+      
+        <h1 id="源代码解读"><a href="#源代码解读" class="headerlink" title="源代码解读"></a>源代码解读</h1><p>这里主要对源代码中各个变量函数的用户，输入，输出进行记录。</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">//global variables 全局变量</span><br><span class="line">double D0_MIN;                             //for d0                 </span><br><span class="line">                                            //就是d0(Lmin)</span><br><span class="line">double Lnorm;                              //normalization length   </span><br><span class="line">                                            //就是Lmin</span><br><span class="line">double score_d8, d0, d0_search, dcu0;      //for TMscore d0_search  </span><br><span class="line">                                            //TMscore搜索中要用到的参数</span><br><span class="line">double **score;                            //Input score table for dynamic </span><br><span class="line">programming</span><br><span class="line">bool   **path;                             //for dynamic programming  </span><br><span class="line">double **val;                              //for dynamic programming  </span><br><span class="line">                                            // value matrix</span><br><span class="line">int    xlen, ylen, minlen;                 //length of proteins</span><br><span class="line">int tempxlen, tempylen, tempMinlen;         //等长坐标矩阵以及长度</span><br><span class="line">double **xa, **ya;                         //for input vectors xa[0...xlen-1][0..2], ya[0...ylen-1][0..2]</span><br><span class="line">                                           //in general, ya is regarded as native structure --&gt; superpose xa onto ya</span><br><span class="line">int    *xresno, *yresno;                   //residue numbers, used in fragment gapless threading </span><br><span class="line">double **xtm, **ytm;                       //for TMscore search engine</span><br><span class="line">double **xt;                               //for saving the superposed version of r_1 or xtm</span><br><span class="line">char   *seqx, *seqy;                       //for the protein sequence </span><br><span class="line">int    *secx, *secy;                       //for the secondary structure </span><br><span class="line">double **r1, **r2;                         //for Kabsch rotation </span><br><span class="line">double t[3], u[3][3];                      //Kabsch translation vector and rotation matrix</span><br><span class="line">                                            //superimpose结果</span><br><span class="line"></span><br><span class="line">int atomxlen, atomylen;        // length of atoms</span><br><span class="line">int *ia1, *ia2;                // ATOM indices, used for display</span><br><span class="line">char  **aa1, **aa2;           // &quot;N&quot;, or &quot;CA&quot;, or &quot;C&quot; </span><br><span class="line">double **xyza1, **xyza2;      // for input vectors xa[0...xlen-1][0..2], ya[0...ylen-1][0..2], just for display</span><br><span class="line">char **ra1, **ra2;           // for the protein sequence </span><br><span class="line">int  *ir1, *ir2;             // residue numbers, used in fragment gapless threading </span><br><span class="line"></span><br><span class="line">char sequence[10][MAXLEN];// get value from alignment file</span><br><span class="line">double TM_ali, rmsd_ali;// TMscore and rmsd from standard_TMscore func, </span><br><span class="line">int L_ali;// Aligned length from standard_TMscore func, </span><br><span class="line"></span><br><span class="line">char *ins1, *ins2, *ains1, *ains2;// flag characters for data read from PDB file, which begins with &quot;ATOM&quot;, and locates at s(27), usually are spaces</span><br><span class="line">int **nres1, **nres2;// number of atoms, nres1(i,j): the number of atoms for ith residue, j usually is 32 for a space</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//argument variables</span><br><span class="line">char out_reg[MAXLEN];</span><br><span class="line">double Lnorm_ass, Lnorm_d0, d0_scale, d0A, d0B, d0u, d0a;</span><br><span class="line">bool o_opt, a_opt, u_opt, d_opt, v_opt;</span><br><span class="line">bool i_opt;// flags for -i, with user given initial alignment file</span><br><span class="line">bool m_opt;// flags for -m, output rotation matrix</span><br><span class="line">bool I_opt;// flags for -I, stick to user given initial alignment file</span><br><span class="line"></span><br><span class="line">double TM3, TM4, TM5;</span><br></pre></td></tr></table></figure>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="load-PDB-allocate-memory-xname-yname"><a href="#load-PDB-allocate-memory-xname-yname" class="headerlink" title="load_PDB_allocate_memory(xname, yname)"></a>load_PDB_allocate_memory(xname, yname)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">跟是否有“-o”有关。</span><br><span class="line"></span><br><span class="line">假设没有“-o”：</span><br><span class="line">在执行完程序之后，我用得到的功能如下：</span><br><span class="line">1.xlen,ylen,minlen   //长度信息</span><br><span class="line">2.xa,ya  //坐标信息</span><br></pre></td></tr></table></figure>
+
+      
+
+
+      <!- 百度自动推送方式提交 -->
+      
+        <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+        </script>
+      
+      <!- 百度自动推送方式提交结束 -->
+
+
+
+
+       <!- 文件结束 -->
+       
+          
+            <div class="essayending">
+              <div>
+               <div style="text-align:center;color: #ccc;font-size:22px;">
+               <br>
+               <br>
+               -------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------
+               <br>
+               <br>
+                <br>
+                <br>
+               </div>
+              </div>
+            </div>
+          
+
+      
+      <!- 文件结束 配置完成-->
+
+
+
+      <!-- 增加版权声明 -->
+
+      
+      
+        <div class="declare">
+          <strong>本文作者：</strong>
+          
+            Shuyan
+          
+          <br>
+          <strong>本文链接：</strong>
+          
+          <a rel="license" href="http://dongshuyan.com/2019/06/26/TMalign/">http://dongshuyan.com/2019/06/26/TMalign/</a>
+          <br>
+
+          <strong>版权声明：</strong>
+          本作品采用
+          <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+          进行许可。转载请注明出处！
+          
+            <br>
+            <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>
+          
+        </div>
+      
+
+      <!-- 增加版权声明结束 -->
+
+      <!-- 尾google广告 -->
+      
+      <!-- 尾google广告 -->
+
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://mubu.com/document_image/b18c5c90-1130-4071-a8f3-f9b96f7eb386-3316715.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://mubu.com/document_image/812e63d7-01cf-418f-8000-1e6182180ad4-3316715.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">daily</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">original</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/daily/" class="archive-article-date">
-  	<time datetime="2019-05-22T15:24:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/daily/">Daily Summary</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">daily</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">paper</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://dongshuyan.github.io/m/2019/06/26/TMalign/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+
+
+
+
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/06/21/result_correlatoin/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">因果性和相关性之间的关系。世界本没有因果性</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#源代码解读"><span class="toc-number">1.</span> <span class="toc-text">源代码解读</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#变量"><span class="toc-number">1.1.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数"><span class="toc-number">1.2.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#load-PDB-allocate-memory-xname-yname"><span class="toc-number">1.2.1.</span> <span class="toc-text">load_PDB_allocate_memory(xname, yname)</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
+  
+
+  
+
+  
+
+
+
+  
+    <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '93ca7cddf4828e92c139',
+  	clientSecret: 'a1d76a461d1ee4476b8e389041f283acaa86c5bf',
+  	repo: 'DongBlogComments',
+  	owner: 'dongshuyan',
+  	admin: ['dongshuyan'],
+  	id: 'Wed Jun 26 2019 10:37:13 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
     
 
 
+
+
+
+<!--百度收录-->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!--百度收录结束-->
+
+<!--360收录-->
+<script>
+(function(){
+var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?c589d563b213080f92817b61944b8c99":"https://jspassport.ssl.qhimg.com/11.0.1.js?c589d563b213080f92817b61944b8c99";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+<!--360收录结束-->
           </div>
         </div>
       </div>
@@ -338,9 +671,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

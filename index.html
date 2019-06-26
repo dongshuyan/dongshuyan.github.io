@@ -112,7 +112,7 @@ var _hmt = _hmt || [];
 		<!-- 文章总数 -->
 		<!--
 		<nav>
-    		Number of articles: 37
+    		Number of articles: 38
 		</nav>
 		-->
 		<!-- 文章总数 -->
@@ -349,6 +349,174 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/06/01/从这个博客你能带走和留下什么/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+
+
+
+
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+  
+    <article id="post-TMalign" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+
+      <!-- 目录内容 -->
+      <!--
+         
+            -->  
+        <!-- 目录内容结束 -->
+
+
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/26/TMalign/">TMalign全解读</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+        
+        <!--显示阅读次数完毕-->
+
+
+        
+        <a href="/2019/06/26/TMalign/" class="archive-article-date">
+  	<time datetime="2019-06-26T02:37:13.634Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-26</time>
+</a>
+        
+      </header>
+    
+
+     
+
+
+    <div class="article-entry" itemprop="articleBody">
+
+    <!--文章头google图片-->
+    
+    <!--文章头google图片结束-->
+
+
+
+
+    <!-- 文章头增加转载声明 -->
+
+      
+      
+        <div class="topdeclare" hidden="hidden"></div>
+      
+      
+      <!-- 文章头增加转载声明结束 -->
+
+
+
+
+      
+        <h1 id="源代码解读"><a href="#源代码解读" class="headerlink" title="源代码解读"></a>源代码解读</h1><p>这里主要对源代码中各个变量函数的用户，输入，输出进行记录。</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">//global variables 全局变量</span><br><span class="line">double D0_MIN;                             //for d0                 </span><br><span class="line">                                            //就是d0(Lmin)</span><br><span class="line">double Lnorm;                              //normalization length   </span><br><span class="line">                                            //就是Lmin</span><br><span class="line">double score_d8, d0, d0_search, dcu0;      //for TMscore d0_search  </span><br><span class="line">                                            //TMscore搜索中要用到的参数</span><br><span class="line">double **score;                            //Input score table for dynamic </span><br><span class="line">programming</span><br><span class="line">bool   **path;                             //for dynamic programming  </span><br><span class="line">double **val;                              //for dynamic programming  </span><br><span class="line">                                            // value matrix</span><br><span class="line">int    xlen, ylen, minlen;                 //length of proteins</span><br><span class="line">int tempxlen, tempylen, tempMinlen;         //等长坐标矩阵以及长度</span><br><span class="line">double **xa, **ya;                         //for input vectors xa[0...xlen-1][0..2], ya[0...ylen-1][0..2]</span><br><span class="line">                                           //in general, ya is regarded as native structure --&gt; superpose xa onto ya</span><br><span class="line">int    *xresno, *yresno;                   //residue numbers, used in fragment gapless threading </span><br><span class="line">double **xtm, **ytm;                       //for TMscore search engine</span><br><span class="line">double **xt;                               //for saving the superposed version of r_1 or xtm</span><br><span class="line">char   *seqx, *seqy;                       //for the protein sequence </span><br><span class="line">int    *secx, *secy;                       //for the secondary structure </span><br><span class="line">double **r1, **r2;                         //for Kabsch rotation </span><br><span class="line">double t[3], u[3][3];                      //Kabsch translation vector and rotation matrix</span><br><span class="line">                                            //superimpose结果</span><br><span class="line"></span><br><span class="line">int atomxlen, atomylen;        // length of atoms</span><br><span class="line">int *ia1, *ia2;                // ATOM indices, used for display</span><br><span class="line">char  **aa1, **aa2;           // &quot;N&quot;, or &quot;CA&quot;, or &quot;C&quot; </span><br><span class="line">double **xyza1, **xyza2;      // for input vectors xa[0...xlen-1][0..2], ya[0...ylen-1][0..2], just for display</span><br><span class="line">char **ra1, **ra2;           // for the protein sequence </span><br><span class="line">int  *ir1, *ir2;             // residue numbers, used in fragment gapless threading </span><br><span class="line"></span><br><span class="line">char sequence[10][MAXLEN];// get value from alignment file</span><br><span class="line">double TM_ali, rmsd_ali;// TMscore and rmsd from standard_TMscore func, </span><br><span class="line">int L_ali;// Aligned length from standard_TMscore func, </span><br><span class="line"></span><br><span class="line">char *ins1, *ins2, *ains1, *ains2;// flag characters for data read from PDB file, which begins with &quot;ATOM&quot;, and locates at s(27), usually are spaces</span><br><span class="line">int **nres1, **nres2;// number of atoms, nres1(i,j): the number of atoms for ith residue, j usually is 32 for a space</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//argument variables</span><br><span class="line">char out_reg[MAXLEN];</span><br><span class="line">double Lnorm_ass, Lnorm_d0, d0_scale, d0A, d0B, d0u, d0a;</span><br><span class="line">bool o_opt, a_opt, u_opt, d_opt, v_opt;</span><br><span class="line">bool i_opt;// flags for -i, with user given initial alignment file</span><br><span class="line">bool m_opt;// flags for -m, output rotation matrix</span><br><span class="line">bool I_opt;// flags for -I, stick to user given initial alignment file</span><br><span class="line"></span><br><span class="line">double TM3, TM4, TM5;</span><br></pre></td></tr></table></figure>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="load-PDB-allocate-memory-xname-yname"><a href="#load-PDB-allocate-memory-xname-yname" class="headerlink" title="load_PDB_allocate_memory(xname, yname)"></a>load_PDB_allocate_memory(xname, yname)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">跟是否有“-o”有关。</span><br><span class="line"></span><br><span class="line">假设没有“-o”：</span><br><span class="line">在执行完程序之后，我用得到的功能如下：</span><br><span class="line">1.xlen,ylen,minlen   //长度信息</span><br><span class="line">2.xa,ya  //坐标信息</span><br></pre></td></tr></table></figure>
+
+      
+
+
+      <!- 百度自动推送方式提交 -->
+      
+        <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+        </script>
+      
+      <!- 百度自动推送方式提交结束 -->
+
+
+
+
+       <!- 文件结束 -->
+       
+      <!- 文件结束 配置完成-->
+
+
+
+      <!-- 增加版权声明 -->
+
+      
+      
+        <div class="declare" hidden="hidden"></div>
+      
+
+      <!-- 增加版权声明结束 -->
+
+      <!-- 尾google广告 -->
+      
+      <!-- 尾google广告 -->
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">original</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">paper</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/26/TMalign/">展开全文 >></a>
         </p>
       
 
@@ -1729,174 +1897,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-myquestion" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-
-      <!-- 目录内容 -->
-      <!--
-         
-            -->  
-        <!-- 目录内容结束 -->
-
-
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/11/myquestion/">莫与的十万个为什么（你绝对没有想过的十万个问题）</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-        
-        <!--显示阅读次数完毕-->
-
-
-        
-        <a href="/2019/06/11/myquestion/" class="archive-article-date">
-  	<time datetime="2019-06-11T12:52:35.773Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-11</time>
-</a>
-        
-      </header>
-    
-
-     
-
-
-    <div class="article-entry" itemprop="articleBody">
-
-    <!--文章头google图片-->
-    
-    <!--文章头google图片结束-->
-
-
-
-
-    <!-- 文章头增加转载声明 -->
-
-      
-      
-        <div class="topdeclare" hidden="hidden"></div>
-      
-      
-      <!-- 文章头增加转载声明结束 -->
-
-
-
-
-      
-        <p>这个文章用来收集我平时突然间想到的问题,如果对某个问题有想法，或者有兴趣都可以来找我讨论哦<br>比如在下面留言板讨论！<br>当然啦，认为自己有一些有趣的问题也可以在这里提出来哦~我们评论区见！</p>
-        
-          <a class="article-more-a" href="/2019/06/11/myquestion/#more">more >></a>
-        
-      
-
-
-      <!- 百度自动推送方式提交 -->
-      
-        <script>
-        (function(){
-            var bp = document.createElement('script');
-            var curProtocol = window.location.protocol.split(':')[0];
-            if (curProtocol === 'https') {
-                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-            }
-            else {
-                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-            }
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(bp, s);
-        })();
-        </script>
-      
-      <!- 百度自动推送方式提交结束 -->
-
-
-
-
-       <!- 文件结束 -->
-       
-      <!- 文件结束 配置完成-->
-
-
-
-      <!-- 增加版权声明 -->
-
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-
-      <!-- 增加版权声明结束 -->
-
-      <!-- 尾google广告 -->
-      
-      <!-- 尾google广告 -->
-
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">original</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">essay</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/11/myquestion/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-
-
-
-
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -2004,7 +2004,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">essay</a>
+                <a href="javascript:void(0)" class="js-tag color1">paper</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2012,7 +2012,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">blog</a>
+                <a href="javascript:void(0)" class="js-tag color1">essay</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2029,6 +2029,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">读后感</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">blog</a>
               </li>
              
               <li class="article-tag-list-item">
