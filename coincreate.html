@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />
+	<link rel="icon" type="image/png" href="assets/img/favicon.png" />
+	<title></title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+	<!-- CSS Files -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/css/paper-bootstrap-wizard.css" rel="stylesheet" />
+
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+	<link href="assets/css/demo.css" rel="stylesheet" />
+
+	<!-- Fonts and Icons -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+	<link href="assets/css/themify-icons.css" rel="stylesheet">
+
+
+	 <script src="tp/tp.js"></script>
+    <script src="tp/include.js"></script>
+    <script src="tp/jquery-2.2.4.min.js"></script>
+	  
+    <script src="js/scatter.min.js"></script>
+    <script src="js/eos.min.js"></script>
+
+
+</head>
+
+<body>
+	<div class="image-container set-full-height" style="background-image: url('assets/img/paper-3.jpeg')">
+	    <!--   Creative Tim Branding   -->
+	    <a href="#">	    </a>
+
+		
+	    <!--   Big container   -->
+	    <div class="container">
+	        <div class="row">
+		        <div class="col-sm-8 col-sm-offset-2">
+
+		            <!--      Wizard container        -->
+		            <div class="wizard-container">
+		                <div class="card wizard-card" data-color="azure" id="wizard">
+		                    <form action="" method="">
+		                <!--        You can switch " data-color="azure" "  with one of the next bright colors: "blue", "green", "orange", "red"           -->
+
+		                    	<div class="wizard-header">
+		                    	  <h3 class="wizard-title">创造您的EOS代币</h3>
+		                    	  <p class="category">Let's create our own EOS coin</p>
+		                    	</div>
+
+								<div class="wizard-navigation">
+									<div class="progress-with-circle">
+									     <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" style="width: 21%;"></div>
+									</div>
+									<ul>
+			                            <li>
+											<a href="#details" data-toggle="tab">
+												<div class="icon-circle">
+													<i class="ti-list"></i>
+												</div>
+												代币信息</a>
+										</li>
+			                            <li>
+											<a href="#captain" data-toggle="tab">
+												<div class="icon-circle">
+													<i class="ti-briefcase"></i>
+												</div>
+												邀请人信息
+											</a>
+										</li>
+			                            <li>
+											<a href="#description" data-toggle="tab">
+												<div class="icon-circle">
+													<i class="ti-pencil"></i>
+												</div>
+												发币须知
+											</a>
+										</li>
+			                        </ul>
+								</div>
+		                        <div class="tab-content">
+		                            <div class="tab-pane" id="details">
+		                            	<div class="row">
+		                                	<div class="col-sm-12">
+		                                    	<h5 class="info-text"> Let's start with the basic details</h5>
+		                                	</div>
+			                                <div class="col-sm-5 col-sm-offset-1">
+			                                    <div class="form-group">
+			                                        <label>发币模式（目前请填写：1）</label>
+			                                        <input type="text" class="form-control" id="inp0" seg="0" onKeyUp="mode(this);" >
+													<script>
+													function mode(v){
+														if(v.value == ''){
+															return false;
+														}
+														
+														//判断是否超过长度
+														if(v.value.length > 1){
+															return v.value = v.value.substr(0, 1);
+														}
+													}
+													</script>
+			                                    </div>
+			                                </div>
+			                                <div class="col-sm-5">
+												<div class="form-group">
+			                                        <label>您的EOS账户名(不要有多余空格！)</label>
+			                                        <input type="text" class="form-control" id="inp1" seg="1" placeholder="例： developstdio" >
+													<script>
+													function accountname(v){
+														if(v.value == ''){
+															return false;
+														}
+														//大写转小写
+														v.value = v.value.toLowerCase();
+														//判断是否为英文
+														
+														//判断是否超过长度
+														if(v.value.length > 12){
+															return v.value = v.value.substr(0, 12);
+														}
+													}
+													</script>
+			                                    </div>
+			                                </div>
+			                                <div class="col-sm-5 col-sm-offset-1">
+			                                    <div class="form-group">
+			                                        <label>发币数量（小数点后为精确度）</label>
+			                                        <input type="text" class="form-control" id="inp2" seg="2" placeholder="例： 1000000000.0000" onKeyUp="number(this);" >
+													<script>
+													function number(v){
+														if(v.value == ''){
+															return false;
+														}
+														//大写转小写
+														
+														//判断是否为英文
+														
+														//判断是否超过长度
+														if(v.value.length > 17){
+															return v.value = v.value.substr(0, 17);
+														}
+													}
+													</script>
+			                                    </div>
+			                                </div>
+			                                <div class="col-sm-5">
+			                                	<div class="form-group">
+			                                        <label>代币符号（1-7位的大写字母）</label>
+			                                        <input type="text" class="form-control" id="inp3" seg="3" placeholder="例： MOYU" onKeyUp="dothis(this);">
+													<script>
+													function dothis(v){
+														if(v.value == ''){
+															return false;
+														}
+														//小写转大写
+														v.value = v.value.toUpperCase();
+														//判断是否为英文
+														if(!/^([A-Za-z]+\s?)*[A-Za-z]$/.test(v.value)){
+															return v.value = v.value.substr(0, v.value.length - 1);
+														}
+														//判断是否超过长度
+														if(v.value.length > 7){
+															return v.value = v.value.substr(0, 7);
+														}
+													}
+													</script>
+													<font color="red"  size="3" id="alr" > 已被注册 </font>
+			                                    </div>
+			                                </div>
+		                            	</div>
+		                        	</div>
+		                            <div class="tab-pane" id="captain">
+		                                <h5 class="info-text"Fill in the account name of you inviter </h5>
+		                                <div class="row" >
+											
+		                                    <div class="col-sm-offset-10 col-sm-offset-1 col-md-10">
+		                                   
+													<div class="form-group">
+													  <label>邀请人账户名（12位EOS账户名） <br>
+													    此功能暂不开放</label>
+													  <input type="text" class="form-control" id="inp4" seg="4" disabled/>
+											  </div>
+		                                       
+		                                      </div> 
+		                                   
+		                                </div>
+		                            </div>
+		                            <div class="tab-pane" id="description">
+		                                <div class="row">
+		                                    <h5 class="info-text"> 复制下面的MEMO。进入钱包进行转账发币。<br>转账到以下合约账户：<br>emmmmmmmmmmm<br>转账金额：<br>3EOS</h5>
+											
+		                                    
+		                                    <div class="col-sm-6 col-sm-offset-1 col-md-offset-0 col-md-11">
+		                                        <div class="form-group">
+													<label>您的发币MEMO</label>
+													<input type="text" class="form-control" id="res" >
+												</div>
+		                                    </div>
+											
+											
+		                                </div>
+										<h5 class="info-text"> 样例MEMO：1-developstdio-1000000000.0000-MOYU</br>若与样例MEMO格式相同即可直接进入钱包进行转账操作。</br>否则联系作者（微信SSAUTERNE 备注MEMO错误）若由于用户填写错误造成的损失本DAPP概不负责 </h5>
+		                            </div>
+		                        </div>
+		                        <div class="wizard-footer">
+		                        	<div class="pull-right">
+	                                  <input type='button' class='btn btn-next btn-fill btn-primary btn-wd' name='next' value='下一步' />
+		                                <input type='button' class='btn btn-finish btn-fill btn-primary btn-wd' name='finish' value='返回钱包转账界面进行发币' onclick="MsgBox()" />
+										<script language="javascript">
+											function MsgBox() //声明标识符
+											{
+											alert("发币须知：\n1.用户需确认MEMO无误即可自行进行转账（例如通过钱包app或者交易所提币）\n2.转账成功后币即可到账，可通过eosflare.io进行查询\n3.用户可以通过PocketEOS钱包、TokenPocket钱包、麦子钱包等自助添加您所发行的代币。添加后可在钱包中显示并转账。\n4.关注“深入浅出EOS”公众号，后台回复“钱包显示”即可获取在钱包中显示代币的教程。\n5.关注“深入浅出EOS”公众号，后台回复您想发行的币的符号（例：MOYU），若回复“已被注册”，则不可再注册。若无回复，则可以注册。"); //弹出对话框
+											}
+											</script>
+		                            </div>
+
+		                            <div class="pull-left">
+		                                <input type='button' class='btn btn-previous btn-default btn-wd' name='previous' value='上一页' />
+		                            </div>
+		                            <div class="clearfix"></div>
+		                        </div>
+		                    </form>
+		                </div>
+		            </div> <!-- wizard container -->
+		        </div>
+	        </div> <!-- row -->
+      </div> <!--  big container -->
+
+	    <div class="footer">
+	        <div class="container text-center">
+	             
+	        </div>
+	    </div>
+</div>
+
+</body>
+	<!--   Core JS Files   -->
+	<script src="assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="assets/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
+
+	<!--  Plugin for the Wizard -->
+	<script src="assets/js/paper-bootstrap-wizard.js" type="text/javascript"></script>
+
+	<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
+	<script src="assets/js/jquery.validate.min.js" type="text/javascript"></script>
+	<script type="text/javascript"> 
+		
+		var g_curwalletname = '';
+		var g_curtable = '';
+		var g_curaction = '';
+		var g_eos = '';
+		var g_abidata = '';
+		var eosjs = '';
+		var eos = null;
+		var alead=false;
+		
+		
+		function EosjsInit() {
+			
+			var eosConfig = {
+				chainId: 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
+				httpEndpoint: 'https://mainnet.eoscannon.io',
+				verbose: true
+			}
+			g_eos = Eos(eosConfig);
+		}
+      // EOS RPC 网络设置
+      var network = {
+        blockchain:'eos',
+        protocol:'https',
+        host:'mainnet.eoscannon.io',
+        port:443,
+        chainId:'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906'
+      };
+      var currentAccount = null;
+		var isconnect = false;
+      // 连接
+      function connect(){
+        scatter.connect('MY_GAME_NAME').then(connected => {
+        });
+      }
+		
+		
+		
+	function transferb()
+{
+	
+	ask();
+		  if( alead==true ){
+	  	  	alert('此代币已经被注册，换个符号试试？~');
+	  	  	return false;
+	  	  }
+	
+	var memo = '1-' + $('#inp1').val() + '-' + $('#inp2').val() + '-' + $('#inp3').val();
+	tp.pushEosAction({
+                            actions: [
+                                {
+                                    account: 'eosio.token',
+                                    name: 'transfer',
+                                    authorization: [{
+                                        actor: tpAccount,
+                                        permission: 'active'
+                                    }],
+                                    data: {
+                                        from: tpAccount,
+										to: 'emmmmmmmmmmm',
+                                        quantity: '3.0000 EOS',
+                                        memo:memo,
+                                    }
+                                 }
+                            ],
+                        }).then(function(data){
+                                        if(data.result )Dialog.init('Success!');
+							else Dialog.init('Try again');
+                                    }).catch(function (err) {
+                                        Dialog.init(JSON.stringify(err));
+                                    });
+	
+}
+		
+		
+	function ask(){
+					
+					var contract = 'okkkkkkkkkkk';
+					var table = 'stat';
+					var lower = $('#inp3').val();
+					var scope = $('#inp3').val();
+					g_eos.getTableRows(true, contract, scope, table, "",lower ,-1, 1, function (error, data) {
+					if (error == null) {
+						var cnt = data["rows"].length;
+						if (cnt == 0){document.getElementById('alr').style.color = "green";document.getElementById('alr').innerText=$('#inp3').val()+"可以注册";$("#alr").show();alead=false;}
+						else {document.getElementById('alr').style.color = "red";document.getElementById('alr').innerText=$('#inp3').val()+"已被注册";$("#alr").show();alead=true;}
+						//$("#inp3").html(JSON.stringify(data, null, 2));
+						//document.getElementById("inp2").value=(((data["rows"][0]["balance"]).split(" ")[0])+' '+lower);
+					} else {
+						//$("#inp3").html(error);
+						console.log(error);
+					}
+				})
+			}	
+		
+		
+$(function () {
+	var isTP = tp.isConnected();
+				var scatterAccount=null;
+				tpAccount = null
+	
+	if (isTP) {
+					tp.getCurrentWallet().then(function(data){	
+					tpAccount = data.data.name;
+					})
+					}
+	
+	
+	EosjsInit();
+			$("#alr").hide();
+			
+			$('#inp3').on('keyup', function(){
+			ask();
+			});
+	
+function mapfunc(callback) {
+var val = $(this).val(),
+seg = parseInt($(this).attr('seg')),
+old = $('#res').val();
+old = old == '' ? '---' : old;
+var arr = old.split('-');
+if (callback && typeof callback == 'function') {
+if (!callback.call(this, val)) {
+val = arr[seg];
+$(this).val(val);
+}
+}
+if (val !== arr[seg]) {
+arr[seg] = val;
+$('#res').val(arr.join('-'));
+}
+}
+$('#inp0').on('change', function(){
+mapfunc.call(this);
+});
+$('#inp1').on('change', function(){
+mapfunc.call(this);
+});
+$('#inp2').on('keyup', function(){
+mapfunc.call(this);
+});
+$('#inp3').on('keyup', function(){
+mapfunc.call(this);
+	
+	
+	
+});
+});
+</script>
+
+</html>
